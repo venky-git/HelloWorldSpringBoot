@@ -73,6 +73,7 @@ public class HomeController {
 	 * in the Model
 	 */
 	
+	
 	@GetMapping("/concatenate")
 	public String subtract (@ModelAttribute Input input ,Model model) {
 		
