@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -15,6 +16,11 @@ public class HomeController {
 		System.out.println("Hello World from Spring Boot Controller");
 		return "Home";
 	}
+	
+	/*
+	 * Receive the variable from the html (VIEW) and send them back html using Model
+	 * and View
+	 */
 	
 	@RequestMapping("/Welcome")
 	public ModelAndView welcome(HttpServletRequest request, HttpServletResponse response) {
@@ -32,5 +38,24 @@ public class HomeController {
 		return mv;
 	}
 	
+	/*
+	 * Receive the variable from the html (VIEW) and send them back html using RequestParam
+	 */
+	
+	@RequestMapping("add")
+	public ModelAndView add(@RequestParam("t1") int i, @RequestParam("t2") int j) {
+		
+		int k = i + j;
+        
 
+		System.out.println("Inside the add Function");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Result");
+		mv.addObject("result_value",k);
+		
+		return mv;
+	}
+
+	
 }
