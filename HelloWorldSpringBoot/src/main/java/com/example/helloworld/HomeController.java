@@ -67,6 +67,11 @@ public class HomeController {
 	 * can apply on class level and as well as on method level
 	 */
 	
+	/*
+	 * to use @ModelAttribute the Input ID from html should be same as the variables
+	 * in the Model
+	 */
+	
 	@GetMapping("/concatenate")
 	public String subtract (@ModelAttribute Input input ,Model model) {
 		
