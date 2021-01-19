@@ -89,6 +89,9 @@ public class HomeController {
 		
 	}
 	
+	
+	/* The values in the html are assigned though the output object */
+	
 	@GetMapping("/print")
 	public String printvalue (@ModelAttribute Output output ,Model model) {
 		

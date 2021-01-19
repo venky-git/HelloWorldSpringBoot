@@ -6,9 +6,7 @@
 </head>
 <body>
 	<h1>Hello World !</h1>
-
-
-	<h3>Enter Name</h3>
+	<p> Read value from the html page using the HttpServletRequest & HttpServletResponse </p>
 
 	<form action="Welcome">
 		<label for="fname">First name:</label><br> 
@@ -17,14 +15,20 @@
 			<input type="text" id="lname" name="lname" value="Venky"><br>
 		<br> <input type="submit" value="Submit">
 	</form>
-
+   <hr>
+   <hr>
+   
 <h1> Add the below two numbers</h1>
+<p> Read the values from the html using the @RequestParm </p>	
      <form action="/add">
-		<input type="text" name="t1"><br> <input type="text"
-			name="t2"><br> <input type="submit">
+		<input type="text" name="t1"><br> 
+		<input type="text" name="t2"><br> <input type="submit">
 	</form>
 	
+	<hr> 
+	<hr>
 <h1> Concatenate two strings</h1>
+<p>  Get the values from the html page using the model object</p>	
      <form action="/concatenate"
            method = "get">
 		<input type="text" name="Stringa" id = "Stringa"><br> 
@@ -32,7 +36,11 @@
 		<input type="submit">
 	</form>	
 	
+	<hr>
+	<hr>
+
 <h1> Print the String values strings</h1>
+<p> Printing the values in result using the values from the object </p>	
      <form action="/print">
 		<input type="text" name="sfirst_name" id = "sfirst_name"><br> 
 		<input type="text" name="slast_name" id = "slast_name"><br> 
