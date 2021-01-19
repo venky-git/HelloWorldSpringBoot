@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.helloworld.model.Input;
+import com.example.helloworld.model.Output;
 
 @Controller
 public class HomeController {
@@ -85,6 +86,20 @@ public class HomeController {
 		
 		model.addAttribute("result_value", out_put);
 		return "Result";
+		
+	}
+	
+	@GetMapping("/print")
+	public String printvalue (@ModelAttribute Output output ,Model model) {
+		
+       String fname = output.getSfirst_name();
+       String lname = output.getSlast_name();
+       
+       output.setSfirst_name(lname);
+       output.setSlast_name(fname);
+
+		model.addAttribute("output", output);
+		return "Outview";
 		
 	}
 	
