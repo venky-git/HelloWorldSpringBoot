@@ -4,9 +4,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.example.helloworld.model.Input;
 
 @Controller
 public class HomeController {
@@ -57,5 +62,26 @@ public class HomeController {
 		return mv;
 	}
 
+	/*
+	 * GetMapping we can apply only on method level and RequestMapping annotation we
+	 * can apply on class level and as well as on method level
+	 */
+	
+	@GetMapping("/concatenate")
+	public String subtract (@ModelAttribute Input input ,Model model) {
+		
+		System.out.println("Inside the Sub");
+		System.out.println(input.getStringa());
+		System.out.println(input.getStringb());
+		
+		String a = input.getStringa();
+		String b = input.getStringb();
+		String out_put = a + b;
+		
+		model.addAttribute("result_value", out_put);
+		return "Result";
+		
+	}
 	
 }
+
